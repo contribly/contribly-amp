@@ -9,7 +9,7 @@
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 <!-- The above is all standard AMP boiler plate with no changes -->
 
-<!-- The styling of the overflow div should be owned by the client page. AMP only allows one amp-custom CSS block so this should be included your pages CSS block. -->
+<!-- The styling of the overflow div should be owned by the client page. AMP only allows one amp-custom CSS block so this should be included your page's CSS block. -->
 <style amp-custom>
 	body {
 		padding: 0px 20px 20px;
@@ -30,10 +30,12 @@
 <!-- AMP does not allow JavaScript to run directly on an AMP page. JavaScript applications such as the Contribly widget must run inside an AMP iframe. -->
 <!-- AMP insists on initial sizes for all elements in order to prevent non user initiated reflows as the page is rendered. -->
 
-<!-- Contribly provides an iframe wrapper around the contribute widget which can be used as the iframe src. This iframe will load and render the conribute widget before requesting an AMP iframe resize. -->
+<!-- Contribly provides an iframe wrapper around the contribute widget which can be used as the iframe src. -->
 <!-- AMP iframes are allowed to request a resize after they have loaded and determined their real size requirements (as would be the case with flexible forms) -->
-<!-- We have to lean towards too small when selecting the initial iframe height as we can only height increases when resizing. Presumably this is about minimising reflow. -->
-<!-- An iframe wishing to be resized must provide and overflow UI element; we can use this to prompt the user to allow the resize request. -->
+<!-- The iframe wrapper will load and render the conribute widget before requesting an AMP iframe resize. -->
+
+<!-- We lean towards too small when selecting the initial iframe height as it appears we can only request height increases when resizing. Presumably this is about minimising reflow. -->
+<!-- An iframe wishing to be resized must provide an overflow UI element; we can use this to prompt the user to allow the resize request. The host page should provide the styling for this element. -->
 
 <!-- The iframe src URL should be ammended to pass the correct Contribly client and assignment ids for your assignment. -->
 <amp-iframe 
