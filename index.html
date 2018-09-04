@@ -1,0 +1,66 @@
+<!doctype html>
+<html amp>
+<head>
+<meta charset="utf-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+<link rel="canonical" href="index.html">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<!-- The above is all standard AMP boiler plate with no changes -->
+
+<!-- The styling of the overflow div should be owned by the client page. AMP only allows one amp-custom CSS block so this should be included your pages CSS block. -->
+<style amp-custom>
+	body {
+		padding: 0px 20px 20px;
+	}
+	.overflow {
+		text-align: center;
+		color: red;
+	}
+</style>
+</head>
+<body>
+
+<h4>AMP page with Contribly contribute iframe</h4>
+<hr/>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus mi at aliquam tempor. Nullam ultrices id est et aliquam. Quisque fermentum lacinia tincidunt. Pellentesque semper sed enim vitae fringilla. Vivamus pulvinar vel odio id consequat. Nulla facilisi. Cras orci libero, venenatis quis turpis a, ultricies fringilla odio.</p>
+
+<!-- AMP does not allow JavaScript to run directly on an AMP page. JavaScript applications such as the Contribly widget must run inside an AMP iframe. -->
+<!-- AMP insists on initial sizes for all elements in order to prevent non user initiated reflows as the page is rendered. -->
+
+<!-- Contribly provides an iframe wrapper around the contribute widget which can be used as the iframe src. This iframe will load and render the conribute widget before requesting an AMP iframe resize. -->
+<!-- AMP iframes are allowed to request a resize after they have loaded and determined their real size requirements (as would be the case with flexible forms) -->
+<!-- We have to lean towards too small when selecting the initial iframe height as we can only height increases when resizing. Presumably this is about minimising reflow. -->
+<!-- An iframe wishing to be resized must provide and overflow UI element; we can use this to prompt the user to allow the resize request. -->
+
+<!-- The iframe src URL should be ammended to pass the correct Contribly client and assignment ids for your assignment. -->
+<amp-iframe 
+	sandbox="allow-scripts allow-same-origin" 
+	width="600"
+	height="200"
+        layout="responsive"
+	resizable
+	frameborder="0"
+	src="https://s3-eu-west-1.amazonaws.com/contribly-widgets/contribute/amp-iframe.html?client=216c9059-cde9-4337-ac83-61a6475f8bd2&amp;assignment=ceb0b4ae-be1a-4fab-a278-6cfdbae2e214">
+
+  <!-- A placeholder is mandatory for any AMP iframe which might appear above the fold on initial page load. This example uses a Contribly logo as the placeholder, but the host page is free to provide their own placeholder. -->
+  <amp-img layout="fixed" src="https://moderation.contribly.com/assets/images/logo_x50.png" width="210" height="50" placeholder></amp-img>
+
+  <div overflow tabindex=0 role=button aria-label="Show form" class="overflow">
+	<!-- The styling of the overflow call to action is the responsibility of the host page. -->
+	Show rest of form
+  </div>
+</amp-iframe>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempus mi at aliquam tempor. Nullam ultrices id est et aliquam. Quisque fermentum lacinia tincidunt. Pellentesque semper sed enim vitae fringilla. Vivamus pulvinar vel odio id consequat. Nulla facilisi. Cras orci libero, venenatis quis turpis a, ultricies fringilla odio.</p>
+<p>Mauris malesuada nisi et nulla viverra eleifend a vel libero. Donec imperdiet ligula sit amet semper dignissim. Nulla sit amet velit risus. Aliquam erat volutpat. Ut eget viverra mauris, eget pellentesque metus. Ut aliquam pulvinar augue, ac scelerisque ligula rhoncus ut. Vivamus lacus est, eleifend id volutpat at, euismod et risus. Vestibulum ut mollis nisl, nec porttitor erat. Integer sagittis nisl mi. Phasellus ut eleifend felis.</p>
+<p>Fusce maximus libero erat, in aliquet nibh eleifend id. Vivamus sed dui pulvinar, mattis tellus sed, rutrum ante. Nullam lobortis lectus sapien, nec congue tellus gravida ac. Morbi dignissim velit nibh, ac ornare velit placerat et. Duis tempor, erat in pellentesque finibus, dui est sollicitudin metus, id tempus turpis leo ut augue. Vestibulum convallis nec ex ac vehicula. Cras ullamcorper, nibh sit amet dictum condimentum, magna ante congue mauris, sed pellentesque lectus nunc id odio. Proin vitae faucibus lacus. Aenean purus lectus, molestie ut varius non, facilisis id nisi. Nunc scelerisque ante eget pharetra placerat. Fusce maximus vehicula enim quis tempus. Curabitur ac urna sem. Aenean accumsan maximus lorem. Nunc in bibendum quam. Praesent eleifend leo id metus varius sagittis. Nullam neque nisl, molestie id massa quis, molestie tristique dolor.</p>
+<p>Phasellus pellentesque ornare neque tristique sagittis. Vivamus id magna interdum, consequat justo quis, ornare arcu. Sed malesuada orci sed mi lobortis, id vestibulum nisi semper. Nunc turpis erat, porta a quam sit amet, porta volutpat ex. In id diam magna. In hac habitasse platea dictumst. Donec ullamcorper quam sit amet orci rhoncus, eu elementum libero auctor. Curabitur auctor nec nulla id semper. Suspendisse tortor nunc, commodo et mauris vel, venenatis consequat dolor. Cras lobortis nisl sed tortor laoreet, quis vestibulum sapien tempor. Pellentesque eleifend enim eu velit pharetra venenatis. Nam pharetra mi id volutpat auctor. Etiam sit amet arcu erat. Ut dictum eros a cursus laoreet. Sed a neque neque. Ut at mattis libero.</p>
+
+<hr/>
+
+</body>
+</html>
+
