@@ -2,7 +2,7 @@
 
 An AMP validated example of the Contribly contribute widget operating inside an AMP iframe.
 
-[View the working example here.](http://contribly-amp-example.s3-website-eu-west-1.amazonaws.com/)
+[View the working example here.](https://contribly-amp-example.s3.amazonaws.com/index.html)
 
 See the comments in [index.html](index.html) for an explanation of the design considerations.
 
